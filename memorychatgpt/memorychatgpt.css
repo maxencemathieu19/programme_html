@@ -1,0 +1,8 @@
+video{
+  
+    max-width: 1000px;
+    float: right;
+    border:3px solid rgb(226, 17, 17);
+    border-radius: 10px;
+    
+}
