@@ -126,23 +126,7 @@ function disableCards() {
                 card.src = "cover.png";
             }
             );
-            //afficher une div avec le message "vous avez gagné" en position absolute
-            const div = document.createElement("div");
-            div.innerHTML = "Vous avez gagné";
-            div.style.position = "absolute";
-            div.style.top = "50%";
-            div.style.left = "50%";
-            div.style.transform = "translate(-50%, -50%)";
-            div.style.fontSize = "50px";
-            div.style.color = "red";
-            div.style.fontWeight = "bold";
-            div.style.textAlign = "center";
-            div.style.backgroundColor = "white";
-            div.style.padding = "20px";
-            div.style.borderRadius = "20px";
-            div.style.boxShadow = "0 0 10px black";
-            document.body.appendChild(div);
-
+            document.getElementById("win").style.display = "block";
 
         }, 3000);
     }
