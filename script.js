@@ -80,7 +80,19 @@ function displayCardsRandom(){
     const keys = Object.keys(table);
     const randomKeys = keys.sort(() => Math.random() - 0.5);
     randomKeys.forEach(key => {
-        cards.innerHTML += `<img src="cover.png" class="memorycarte" data-id="${key}"  onclick="returnCard(${key})">`;
+        cards.innerHTML += `
+        <div class="scene scene--card">
+            <div class="cardDiv">
+                <div class="card__face card__face--front">
+                    <img src="cover.png" class="memorycarte" data-id="${key}"  onclick="returnCard(${key})">
+                </div>
+                <div class="card__face card__face--back">
+                    <img src="${table[key].src}" class="memorycarte" data-id="${key}"  onclick="returnCard(${key})">
+                </div>
+            </div>
+        </div>
+        
+        `;
     });
 }
 displayCardsRandom();
@@ -88,13 +100,20 @@ displayCardsRandom();
 function returnCard(key) {
     numberOfCards++;
     if (numberOfCards === 1) {
-        const img = document.querySelector(`[data-id="${key}"]`);
-        img.src = table[key].src;
+        // const img = document.querySelector(`[data-id="${key}"]`);
+        // img.src = table[key].src;
+        // toogle class is-flipped to the card
+        const card = document.querySelector(`[data-id="${key}"]`).parentNode.parentNode;
+        card.classList.toggle("is-flipped");
+
         firstCard = key;
     }
     if (numberOfCards === 2) {
-        const img = document.querySelector(`[data-id="${key}"]`);
-        img.src = table[key].src;
+        // const img = document.querySelector(`[data-id="${key}"]`);
+        // img.src = table[key].src;
+        const card = document.querySelector(`[data-id="${key}"]`).parentNode.parentNode;
+        card.classList.toggle("is-flipped");
+
         secondCard = key;
         checkForMatch();
     }
@@ -137,8 +156,13 @@ function unflipCards() {
         table[firstCard].disable = false;
         table[secondCard].disable = false;
         numberOfCards = 0;
-        document.querySelector(`[data-id="${secondCard}"]`).src = "cover.png";
-        document.querySelector(`[data-id="${firstCard}"]`).src = "cover.png";
+        // document.querySelector(`[data-id="${secondCard}"]`).src = "cover.png";
+        // document.querySelector(`[data-id="${firstCard}"]`).src = "cover.png";
+        // toogle class is-flipped to the first card and the second card
+        const card1 = document.querySelector(`[data-id="${firstCard}"]`).parentNode.parentNode;
+        const card2 = document.querySelector(`[data-id="${secondCard}"]`).parentNode.parentNode;
+        card1.classList.toggle("is-flipped");
+        card2.classList.toggle("is-flipped");
     }, 1000);
     
 }
