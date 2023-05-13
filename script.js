@@ -187,3 +187,10 @@ const stop = () => {
 function closeWin(){
     document.getElementById("win").style.display = "none";
 }
+
+window.onclick = function(event) {
+    if (event.target == document.getElementById("win") && event.target !== document.getElementsByClassName("contentWin")) {
+        document.getElementById("win").style.display = "none";
+    }
+}
+
