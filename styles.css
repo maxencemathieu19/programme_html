@@ -110,7 +110,7 @@ a.active,a:hover{
 section{
     width: 100%;
     height: 100vh;
-    background-image:url(image-ninho.png);
+    background-image:url(img/image-ninho.png);
     background-position: center;
     background-size: cover;
 }
@@ -128,7 +128,7 @@ p {
 .container{
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(image-ninho.png);
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(img/image-ninho.png);
     background-position: center;
     background-size: cover;
 }
@@ -167,16 +167,16 @@ p {
 }
 
 .card1{
-    background-image: url(Longjumeau.png);
+    background-image:url(img/Longjumeau.png);
 }
 .card2{
-    background-image: url(ninho-enfant.png);
+    background-image:url(img/ninho-enfant.png);
 }
 .card3{
-    background-image: url(Serge-Kiambukuta.png);
+    background-image:url(img/Serge-Kiambukuta.png);
 }
 .card4{
-    background-image: url(Nemours.png);
+    background-image:url(img/Nemours.png);
 }
 
 .card:hover{
@@ -368,7 +368,7 @@ h3{
   }
 
   .contentWin{
-    background-image: url(sltcninho.png);
+    background-image: url(img/sltcninho.png);
     background-position: center;
     background-repeat: no-repeat;
   }

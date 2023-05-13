@@ -1,67 +1,67 @@
 const table = {
     1: {
-        src: "ispac.png",
+        src: "img/ispac.png",
         disable: false
     },
     2: {
-        src: "mils.png",
+        src: "img/mils.png",
         disable: false
     },
     3: {
-        src: "comme_prevu.png",
+        src: "img/comme_prevu.png",
         disable: false,
     },
     4: {
-        src: "mils2_0.png",
+        src: "img/mils2_0.png",
         disable: false,
     },
     5: {
-        src: "destin.png",
+        src: "img/destin.png",
         disable: false,
     },
     6: {
-        src: "mils3_0noir.png",
+        src: "img/mils3_0noir.png",
         disable: false,
     },
     7: {
-        src: "MILS3_0.png",
+        src: "img/MILS3_0.png",
         disable: false,
     },
     8: {
-        src: "jefe.png",
+        src: "img/jefe.png",
         disable: false,
     },
     9: {
-        src: "ispac.png",
+        src: "img/ispac.png",
         disable: false,
     },
     10: {
-        src: "mils.png",
+        src: "img/mils.png",
         disable: false,
     },
 
     11: {
-        src: "comme_prevu.png",
+        src: "img/comme_prevu.png",
         disable: false,
     },
     12: {
-        src: "mils2_0.png",
+        src: "img/mils2_0.png",
         disable: false,
     },
     13: {
-        src: "destin.png",
+        src: "img/destin.png",
         disable: false,
     },
     14: {
-        src: "mils3_0noir.png",
+        src: "img/mils3_0noir.png",
         disable: false,
     },
     15: {
-        src: "MILS3_0.png",
+        src: "img/MILS3_0.png",
         disable: false,
     },
     16: {
-        src: "jefe.png",
+        src: "img/jefe.png",
         disable: false,
     },
 }
@@ -84,7 +84,7 @@ function displayCardsRandom(){
         <div class="scene scene--card">
             <div class="cardDiv">
                 <div class="card__face card__face--front">
-                    <img src="cover.png" class="memorycarte" data-id="${key}"  onclick="returnCard(${key})">
+                    <img src="img/cover.png" class="memorycarte" data-id="${key}"  onclick="returnCard(${key})">
                 </div>
                 <div class="card__face card__face--back">
                     <img src="${table[key].src}" class="memorycarte" data-id="${key}"  onclick="returnCard(${key})">
@@ -142,7 +142,7 @@ function disableCards() {
             numberOfCards = 0;
             const cards = document.querySelectorAll(".memorycarte");
             cards.forEach(card => {
-                card.src = "cover.png";
+                card.src = "img/cover.png";
             }
             );
             document.getElementById("win").style.display = "block";
@@ -156,8 +156,8 @@ function unflipCards() {
         table[firstCard].disable = false;
         table[secondCard].disable = false;
         numberOfCards = 0;
-        // document.querySelector(`[data-id="${secondCard}"]`).src = "cover.png";
-        // document.querySelector(`[data-id="${firstCard}"]`).src = "cover.png";
+        // document.querySelector(`[data-id="${secondCard}"]`).src = "img/cover.png";
+        // document.querySelector(`[data-id="${firstCard}"]`).src = "img/cover.png";
         // toogle class is-flipped to the first card and the second card
         const card1 = document.querySelector(`[data-id="${firstCard}"]`).parentNode.parentNode;
         const card2 = document.querySelector(`[data-id="${secondCard}"]`).parentNode.parentNode;
