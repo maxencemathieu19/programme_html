@@ -183,3 +183,7 @@ const stop = () => {
         confetti.stop()
     }, 5000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
 };
+
+function closeWin(){
+    document.getElementById("win").style.display = "none";
+}
