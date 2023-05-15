@@ -71,6 +71,9 @@ let numberOfCards = 0;
 let firstCard = 0;
 let secondCard = 0;
 let points = 0;
+let isStarted = false;
+let finalTime = 0;
+var chronoInterval
 
 
 // affiche les cartes dans un ordre aléatoire
@@ -98,6 +101,9 @@ function displayCardsRandom(){
 displayCardsRandom();
 
 function returnCard(key) {
+    if (isStarted === false) {
+        startChrono();
+    }
     numberOfCards++;
     if (numberOfCards === 1) {
         // const img = document.querySelector(`[data-id="${key}"]`);
@@ -145,6 +151,11 @@ function disableCards() {
                 card.src = "img/cover.png";
             }
             );
+            stopChrono();
+            let seconds = Math.floor(finalTime / 1000);
+            let minutes = Math.floor(seconds / 60);
+            seconds = seconds % 60;
+            document.getElementById("finalTimeShow").innerHTML = "en" + minutes + "m " + seconds + "s";
             document.getElementById("win").style.display = "block";
 
         }, 3000);
@@ -191,6 +202,36 @@ function closeWin(){
 window.onclick = function(event) {
     if (event.target == document.getElementById("win") && event.target !== document.getElementsByClassName("contentWin")) {
         document.getElementById("win").style.display = "none";
+        restartChrono();
     }
+}
+
+function startChrono() {
+    isStarted = true;
+    chronoStart = new Date();
+    chronoInterval = setInterval(function () {
+        let now = new Date();
+        let elapsed = now - chronoStart;
+        finalTime = elapsed;
+        let seconds = Math.floor(elapsed / 1000);
+        let minutes = Math.floor(seconds / 60);
+        seconds = seconds % 60;
+        document.getElementById("chrono").innerHTML = "Votre temps : " + minutes + "m " + seconds + "s";
+    }, 1000);
+}
+
+function stopChrono() {
+    isStarted = false;
+    console.log(chronoInterval)
+    console.log(clearInterval(chronoInterval))
+    document.getElementById("chrono").innerHTML = "";
+}
+
+function restartChrono() {
+    clearInterval(chronoInterval);
+    chronoInterval = null;
+    chronoStart = null;
+    isStarted = false;
+    document.getElementById("chrono").innerHTML = "0m 0s";
 }
 

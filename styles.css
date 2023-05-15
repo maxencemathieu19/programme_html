@@ -131,6 +131,7 @@ p {
 }
 
 .container{
+    position:relative;
     width: 100%;
     height: 100vh;
     background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(img/image-ninho.png);
@@ -419,4 +420,14 @@ h3{
     color:white;
     width:1rem;
     cursor:pointer;
+}
+
+#chrono{
+    position:absolute;
+    top:3rem;
+    left:5rem;
+    color:white;
+    width:9rem;
+    cursor:pointer;
+    font-size:1.5rem;
 }
